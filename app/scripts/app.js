@@ -15,8 +15,18 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch', 
+    'pascalprecht.translate',
+    'tmh.dynamicLocale'
   ])
+  .constant('DEBUG_MODE', /*DEBUG_MODE*/true/*DEBUG_MODE*/)
+  .constant('LOCALES', {
+    'locales': {
+      'fr_fr': 'Français',
+      'en_US': 'English'
+    },
+    'preferredLocale': 'en_US'
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -32,4 +42,23 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+   // Angular Translate
+  .config(function ($translateProvider, DEBUG_MODE, LOCALES) {
+    if (DEBUG_MODE) {
+      $translateProvider.useMissingTranslationHandlerLog();// warns about missing translates
+    }
+
+    $translateProvider.useStaticFilesLoader({
+      prefix: 'resources/locale-',
+      suffix: '.json'
+    });
+
+    $translateProvider.preferredLanguage(LOCALES.preferredLocale);
+    $translateProvider.useLocalStorage();
+  })
+  // Angular Dynamic Locale
+  .config(function (tmhDynamicLocaleProvider) {
+    tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
   });
+  ;
