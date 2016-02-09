@@ -1,6 +1,6 @@
 #!/bin/bash
 
-grunt build 
+grunt build -f
 
 sudo docker-compose build
 
