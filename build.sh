@@ -1,7 +1,7 @@
-!#/bin/bash
+#!/bin/bash
 
-grunt build -f
+grunt build 
 
-docker-compose build
+sudo docker-compose build
 
-docker-compose up
+sudo docker-compose up
