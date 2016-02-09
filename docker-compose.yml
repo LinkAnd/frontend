@@ -1,0 +1,6 @@
+web:
+   build: .
+   dockerfile: Dockerfile
+   container_name: frontend
+   ports:
+     - "8080:80"
