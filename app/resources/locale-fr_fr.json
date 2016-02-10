@@ -1,4 +1,16 @@
 {
-    "views.main.Splendid!": "Splendid!",
-    "directives.language-select.Language": "Language"
+    "views.main.Splendid!"                : "Splendid!",
+    "views.about.Slogan"                  : "Partager, Aimer : c'est aussi porter un projet !",
+    "views.about.title.general"           : "Générale", 
+    "views.about.title.holder"            : "Porteur de projet",
+    "views.about.title.proponent"         : "Promoteur de projet",
+    "views.about.title.how"               : "Comment ça marche", 
+    "views.about.text.general.p1"         : "De nos jours le partage de compétences a permis de créer beaucoup d'innovation comme avec github qui permet à développeurs de partager du code source, cela a permis en outre de voir apparaitre beaucoup d'applications innovantes.",
+    "views.about.text.general.p2"         : "Ensuite le partage c'est aussi porté sur le financement comme avec kikstater. Cependant certaines personnes qui n'ont ni les compétences techniques et ni la trésorerie peuvent eux aussi participer a la création de l'innovation.",
+    "views.about.text.general.p3"         : "Cette application permet la mise en relation entre <b>porteurs de projet</b> et <b>promoteur de projet</b> de façon gratuite en vue de promouvoir les projets innovants sur les réseaux sociaux",
+    "views.about.text.holder.p1"          : "Vous avez créé un nouvel objet connecté. Vous avez créé une application innovante mais vous n'arrivez pas à la rendre très populaires. Vous souhaiteriez la faire connaitre à un plus grand nombre de personnes",
+    "views.about.text.holder.p2"          : "Cette application vous permet de faire connaître votre projet à des personnes souhaitant promouvoir de façon gratuite des projets innovants",
+    "views.about.text.proponent.p1"       : "Votre rêve est d'apporter votre contribution à l'innovation mais vous n'avez ni trésorerie, ni compétences. Vous possédez cependant quelque chose de tout aussi important : une réputation, pourquoi ne pas la mettre au service de l'innovation ? Promouvoir un projet est aussi important que de le construire ou de le financer. Le retour sur investissement n'est possible que si le produit est massivement utilisé. Il faut donc massivement le promouvoir ! Devenez le combustible de cet énorme moteur !",
+    "views.about.text.how.p1"             : "Les porteurs de projet remplissent une fiche d'information sur leur projet en y indiquant les objectifs (nombre de commentaire, nombre de vue, etc.) qu'il aimerait accomplir sur une période de deux semaines. La période de deux semaines est appelé un sprint. Pendant ce sprint les promoteurs vont avoir comme objectif d'atteindre le nombre de vues etc. souhaiter par le porteur du projet. Que les objectifs du projet soient accomplis ou non les promoteurs gagnent des points de popularité mais si ceux-ci sont rempli les promoteurs gagne un bonus definit par le porteur de projet et validé par les modérateurs.",
+    "directives.language-select.Language" : "Language"
 }

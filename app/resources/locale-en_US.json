@@ -1,4 +1,10 @@
 {
     "views.main.Splendid!": "Splendid!",
+    "views.about.Slogan"  :  "",
+    "views.about.title.general"           : "", 
+    "views.about.title.holder"            : "", 
+    "views.about.text.general.p1"         : "",
+    "views.about.text.general.p2"         : "",
+    "views.about.text.general.p3"         : "",
     "directives.language-select.Language": "Language"
 }
