@@ -14,6 +14,7 @@ angular.module('frontendApp') .directive('ngTranslateLanguageSelect', function (
     
                 $scope.changeLanguage = function (locale) {
                     LocaleService.setLocaleByDisplayName(locale);
+                    $scope.currentLocaleDisplayName = LocaleService.getLocaleDisplayName();
                 };
             }
         };
