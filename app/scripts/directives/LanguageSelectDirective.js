@@ -3,7 +3,9 @@ angular.module('frontendApp') .directive('ngTranslateLanguageSelect', function (
         return {
             restrict: 'A',
             replace: true,
-            template: '<li ng-repeat="lang in localesDisplayNames"><a href="#">{{lang}}</a></li>',
+            template: '<ul class="dropdown-menu">'
+                          +'<li ng-repeat="lang in localesDisplayNames" ng-class="(lang == currentLocaleDisplayName) ? \'active\' : \'\' "><a ng-click="changeLanguage(lang)">{{lang}}</a></li>'+
+                       '<ul>',
             controller: function ($scope) {
                 $scope.currentLocaleDisplayName = LocaleService.getLocaleDisplayName();
                 $scope.localesDisplayNames = LocaleService.getLocalesDisplayNames();
