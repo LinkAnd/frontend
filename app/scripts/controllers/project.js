@@ -16,12 +16,13 @@ angular.module('frontendApp')
     	$scope.result = [];
 
     	if($scope.search === null){
-    		$scope.result = $scope.projets;
+    		$scope.result = $scope.projects;
     		return;
     	}
         //$scope.result = _.where($scope.projects, function(row){return name.indexof($scope.search) > -1;});
         for (var i = $scope.projects.length - 1; i >= 0; i--) {
-        	var field = (typeof $scope.projects[i][$scope.filter] === Array) ? $scope.projects[i][$scope.filter].join(',') :  $scope.projects[i][$scope.filter];
+        	var field = (typeof $scope.projects[i][$scope.filter] === "object") ? $scope.projects[i][$scope.filter].join(',') :  $scope.projects[i][$scope.filter];;
+        	console.log(field);
         	if(field.indexOf($scope.search)>-1){
         		$scope.result.push($scope.projects[i]);
         	}
