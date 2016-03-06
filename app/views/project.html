@@ -1,7 +1,14 @@
 <h1>Projects</h1>
-<span ng-show="{{index.length > 0}}">{{index.length}} project(s)</span>
 <div>
-   <div ng-each="i in index">
-   	   <h3>{{projects[i].name}}</h3>
+  <input type="text" ng-model="search"/>
+  <select ng-model="filter">
+  	<option ng-repeat="property in properties" name="{{property}}">{{property}}</option>
+  </select>
+  <a class="btn btn-primary" ng-click="getReach()">Reach</a>
+</div>
+<span ng-show="result.length > 0">{{result.length}} project(s)</span>
+<div>
+   <div ng-repeat="project in result">
+   	   <h3>{{project.name}}</h3>
    </div>
 </div>

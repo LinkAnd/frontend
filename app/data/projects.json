@@ -1,5 +1,6 @@
-{
-	"123-abc-nolan":{
+[
+	{
+		"id":"123-abc-nolan",
 		"name":"Super patatore",
 		"url" : "http://yop.com",
 		"description" : "espsilul iudzefhzefhzefbzdkhbzbczbczcbzeuofhldnf",
@@ -8,7 +9,8 @@
             "fun"
 		]
 	},
-	"124-abd-morgan":{
+	{
+		"id":"124-abd-morgan",
 		"name":"Zumba sur mars",
 		"url" : "http://lolo.com",
 		"description" : "titi",
@@ -17,4 +19,4 @@
             "fun"
 		]
 	}
-}
+]
