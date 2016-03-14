@@ -7,8 +7,9 @@ angular.module('frontendApp')
 			get : function(callback){
 				$http.get('http://localhost:9000/data/projects.json')
 				.then(function(res, err){
-					if(!err)
-					   callback(res.data);
+					if(!err){
+						callback(res.data);
+					}
 				});
 			}
 		},
