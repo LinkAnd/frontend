@@ -2,34 +2,34 @@
 
 angular.module('frontendApp')
 .controller('ProjectCtrl', function($TestData, $scope){
-    $TestData.Project.get(function(data){
-    	$scope.projects = data;
-    	$scope.result = data;
-    });
-    $scope.search = null;
-    $scope.properties = [
-        "name",
-        "tags"
-    ];
 
-    $scope.getProjectsByTags = function(){
-        var tags = {};
-        _.map($scope.projects, function(r){
-           _.map(r.tags, function(t){
-               if(!tags[t]){
-                   tags[t] = [];
-               }
-               tags[t].push(r);
-           });
-        });
-        return tags;
-    };
+    $TestData.Project.groupBy('tags', function(group){
+        $scope.group = group;
+    });
+
+    $scope.search = null;
 
     $scope.getReach = function(){
-    	$scope.result = [];
-    	if($scope.search === null){
-    		$scope.result = $scope.projects;
-    		return;
-    	}
+        $scope.result = [];
+        if($scope.search === null){
+            $scope.result = $scope.projects;
+            return;
+        }
+
+        _.forEach($scope.projects, function(project){
+            if(JSON.stringify(project).toLowerCase().indexOf($scope.search.toLowerCase()) > -1){
+                $scope.result.push(project);
+            }
+        });
     };
+
+    $scope.selectTag = function(tag){
+        $scope.tagSelected = tag;
+        $scope.projects = tag.projects;
+        $scope.result = tag.projects;
+        $scope.search = '';
+    };
+
+    
+
 });

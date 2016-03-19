@@ -1,14 +1,21 @@
 <h1>Projects</h1>
 <div>
-  <input type="text" ng-model="search"/>
-  <select ng-model="filter">
-  	<option ng-repeat="property in properties" name="{{property}}">{{property}}</option>
-  </select>
-  <a class="btn btn-primary" ng-click="getReach()">Reach</a>
-</div>
-<span ng-show="result.length > 0">{{result.length}} project(s)</span>
-<div>
-   <div ng-repeat="project in result">
-   	   <h3>{{project.name}}</h3>
+  <div>
+       <span ng-repeat="tag in group">
+       	      <a class="btn btn-primary" ng-click="selectTag(tag)" ng-class="(tagSelected.name === tag.name) ? 'active' : ''">{{tag.name}}</a>
+       </span>
+  </div>
+
+  <div ng-show="tagSelected">
+     <input type="text" ng-model="search"/>
+     <a class="btn btn-primary" ng-click="getReach()">Reach</a>
+     <span ng-show="result.length > 0">{{result.length}} project(s)</span>
+  </div>
+
+   <div ng-show="tagSelected">
+      <div ng-repeat="project in result">
+   	      <h3>{{project.name}}</h3>
+      </div>
    </div>
+   
 </div>
