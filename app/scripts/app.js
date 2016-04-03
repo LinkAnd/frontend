@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch', 
     'pascalprecht.translate',
-    'tmh.dynamicLocale'
+    'tmh.dynamicLocale',
+    'ui.bootstrap'
   ])
   .constant('DEBUG_MODE', /*DEBUG_MODE*/true/*DEBUG_MODE*/)
   .constant('LOCALES', {

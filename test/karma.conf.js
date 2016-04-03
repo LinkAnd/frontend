@@ -37,6 +37,7 @@ module.exports = function(config) {
       'public/components/angular-translate-storage-local/angular-translate-storage-local.js',
       'public/components/angular-translate-handler-log/angular-translate-handler-log.js',
       'public/components/angular-dynamic-locale/src/tmhDynamicLocale.js',
+      'public/components/angular-bootstrap/ui-bootstrap-tpls.js',
       'public/components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

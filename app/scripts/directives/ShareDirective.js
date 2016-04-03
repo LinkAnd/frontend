@@ -11,7 +11,9 @@ angular.module('frontendApp').directive('share', function (LocaleService) {
 
 
 var LocalCtlr = function($scope){
+	'use strict';
 	$scope.open = function(){
-		alert('open modal');
+		var url = "https://twitter.com/intent/tweet?text=%22yop%22";
+		window.open(url,'Share with twitter');
 	};
 };
