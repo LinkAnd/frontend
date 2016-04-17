@@ -10,7 +10,7 @@ angular.module('frontendApp').directive('tileProject', function () { 'use strict
                     '<h3 ng-click="setExpand()">{{project.name}}</h3>' +
                     '<div ng-show="expand">' +
                        '<label>{{"description" | translate}} : </label> <span class="description">{{project.description}}<span> <br/>' +
-                       '<label>{{"auteur" | translate}} : </label> <span>{{project.auteur}}<span> <br/>' +
+                       '<label>{{"auteur" | translate}} : </label> <inline-author uid="{{project.author}}"></inline-authort> <br/>' +
                     '</div>' +
                    '</div>',
         controller: function ($scope) {

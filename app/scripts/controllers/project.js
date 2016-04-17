@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('frontendApp')
-.controller('ProjectCtrl', function($TestData, $scope){
+.controller('ProjectCtrl', function($Project, $scope){
 
-    $TestData.Project.groupBy('tags', function(group){
+    $Project.groupBy('tags', function(group){
         $scope.group = group;
     });
 
