@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch', 
     'pascalprecht.translate',
-    'tmh.dynamicLocale'
+    'tmh.dynamicLocale',
+    'elasticsearch'
   ])
   .constant('DEBUG_MODE', /*DEBUG_MODE*/true/*DEBUG_MODE*/)
   .constant('LOCALES', {
@@ -70,5 +71,11 @@ angular
   // Angular Dynamic Locale
   .config(function (tmhDynamicLocaleProvider) {
     tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
+  })
+  .service('$elasticsearch', function (esFactory) {
+    return esFactory({
+      host: 'localhost:9200',
+      index: 'linkand'
+      // ...
+    });
   });
-  ;

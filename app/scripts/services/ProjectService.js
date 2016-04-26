@@ -1,34 +1,30 @@
 angular.module('frontendApp')
-.service('$Project', function($http, $localStorage, $TestData){
+.service('$Project', function($http, $localStorage, $TestData, $elasticsearch){
 	return {
 		get : function(callback){
-            $localStorage.get("projects", function(data, err){
-            	if(err){
-            		$http.get($TestData.Project)
-					.then(function(res, err){
-						if(!err){
-							$localStorage.set("projects", res.data, callback);
-						}
-					});
-            	}else{
-            		callback(data);
-            	}
-            });
+			$elasticsearch.search({
+				index : $TestData.index,
+				type: $TestData.projectType,
+				q:'*',
+				_source:''
+
+			}, callback);
 		},
 		groupBy: function(property, callback){
-			this.get(function(projects){
-				var group = [];
-				_.map(projects, function(project){
-                   _.map(project[property], function(value){
-               	    var g =_.find(group,{name:value});
-                    if(!g){
-                    	group.push({name:value, projects:[]});
-                    	g =_.find(group,{name:value});
-                    }
-                    g.projects.push(project);
-                   });
-				});
-				callback(group);
+			$elasticsearch.search({
+				index: $TestData.index,
+				type : $TestData.projectType,
+				q:'*',
+				_source:true,
+				"aggs": {
+				    "group_by_state": {
+				      "terms": {
+				        "field": "tags"
+				      }
+				    }
+				  }
+			}, function(error, response){
+				console.log(response);
 			});
 		},
 		Request : function(predica, callback){
