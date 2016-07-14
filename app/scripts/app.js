@@ -50,6 +50,11 @@ angular
         'controller'  : 'ProjectCtrl',
         'controllerAs': 'project'
       })
+      .when('/authorize/:accessToken', {
+        'templateUrl' : 'views/main.html',
+        'controller'  : 'AuthorizeCtrl',
+        'controllerAs': 'authorize'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -71,11 +76,4 @@ angular
   // Angular Dynamic Locale
   .config(function (tmhDynamicLocaleProvider) {
     tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
-  })
-  .service('$elasticsearch', function (esFactory) {
-    return esFactory({
-      host: 'localhost:9200',
-      index: 'linkand'
-      // ...
-    });
   });

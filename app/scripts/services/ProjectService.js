@@ -6,25 +6,25 @@ angular.module('frontendApp')
 				index : $TestData.index,
 				type: $TestData.projectType,
 				q:'*',
-				_source:''
-
+			    "fields": [
+			        "_source"
+			    ]
 			}, callback);
 		},
 		groupBy: function(property, callback){
-			$elasticsearch.search({
-				index: $TestData.index,
-				type : $TestData.projectType,
-				q:'*',
-				_source:true,
-				"aggs": {
-				    "group_by_state": {
-				      "terms": {
-				        "field": "tags"
-				      }
-				    }
-				  }
-			}, function(error, response){
+			this.get(function(err, response){
 				console.log(response);
+
+				var result = _.chain(response.hits.hits)
+				               .groupBy(property)
+				               .toPairs()
+				               .map(function(currentItem) {
+				               	     console.log(currentItem);
+							        return _.pick(_.zip([property, "projects"], currentItem));
+							    })
+							    .value();
+
+				console.log(result);
 			});
 		},
 		Request : function(predica, callback){
