@@ -25,8 +25,8 @@ angular.module('frontendApp')
 
     $scope.selectTag = function(tag){
         $scope.tagSelected = tag;
-        $scope.projects = tag.projects;
-        $scope.result = tag.projects;
+        $scope.projects = $scope.group[tag];
+        $scope.result = $scope.group[tag];
         $scope.search = '';
     };
 

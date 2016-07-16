@@ -4,7 +4,8 @@ angular.module('frontendApp')
 .service('$TestData', function(){
 	return {
 		index : 'linkand',
-		projectType : 'Projects',
+		project : 'http://localhost:3001/project/',
+		identity : 'http://localhost:3000/',
 		userType: 'Users'
 	};
 });

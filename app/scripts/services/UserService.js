@@ -1,18 +1,11 @@
 angular.module('frontendApp')
-.service('$User', function($http, $localStorage, $TestData){
+.service('$User', function($http, $localStorage, $TestData, $rootScope){
 	return {
-		get : function(callback){
-            $localStorage.get("projects", function(data, err){
-            	if(err){
-            		$http.get($TestData.User)
-					.then(function(res, err){
-						if(!err){
-							$localStorage.set("projects", res.data, callback);
-						}
-					});
-            	}else{
-            		callback(data);
-            	}
+		get : function(id, callback){
+            $http
+            .get($TestData.identity+'whois/'+id)
+            .success(function(response){
+            	callback(response);
             });
 		},
 		groupBy: function(property, callback){

@@ -7,7 +7,8 @@ angular.module('frontendApp') .directive('connexion', function (LocaleService) {
             replace: true,
             template: '<li>'+
             		'<a ng-show="!isConnected" ng-click="connexion()">Connexion</a>' +
-            		'<a ng-show="isConnected" ng-click="disconnect()">Disconnect</a>' +
+            		'<a ng-show="isConnected" ng-click="disconnect()">'+
+                    'Disconnect</a>' +
             		'</li>',
             controller: function ($scope, $rootScope) {
             	console.log($rootScope.user);

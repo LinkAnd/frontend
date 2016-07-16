@@ -2,8 +2,8 @@
 <div>
 
   <div>
-       <span ng-repeat="tag in group">
-       	      <a class="btn btn-primary" ng-click="selectTag(tag)" ng-class="(tagSelected.name === tag.name) ? 'active' : ''">{{tag.name}}</a>
+       <span ng-repeat="(key, tag) in group">
+       	      <a class="btn btn-primary" ng-click="selectTag(key)" ng-class="(tagSelected.name === tag.name) ? 'active' : ''">{{key}}</a>
        </span>
   </div>
 
@@ -19,7 +19,7 @@
 
   <div ng-show="tagSelected">
     <div ng-repeat="project in result">
-   	   <tile-project project="{{project}}"></tile-project>
+   	   <tile-project project="project"></tile-project>
     </div>
   </div>
 
