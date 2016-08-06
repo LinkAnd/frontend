@@ -55,6 +55,11 @@ angular
         'controller'  : 'AuthorizeCtrl',
         'controllerAs': 'authorize'
       })
+      .when('/addProject', {
+        'templateUrl' : 'views/addProject.html',
+        'controller'  : 'AddProjectCtrl',
+        'controllerAs': 'addProject'
+      })
       .otherwise({
         redirectTo: '/'
       });

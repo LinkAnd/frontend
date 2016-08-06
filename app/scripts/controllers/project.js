@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('frontendApp')
-.controller('ProjectCtrl', function($Project, $scope){
+.controller('ProjectCtrl', function($Project, $scope, $location){
 
     $Project.groupBy('tags', function(group){
         $scope.group = group;
@@ -25,11 +25,18 @@ angular.module('frontendApp')
 
     $scope.selectTag = function(tag){
         $scope.tagSelected = tag;
-        $scope.projects = $scope.group[tag];
-        $scope.result = $scope.group[tag];
-        $scope.search = '';
+        $Project.getByTag(tag, function(projects){
+            $scope.projects= projects;
+            $scope.result = projects;
+        });
     };
 
-    
+    $scope.gotoAdd = function(){
+        $location.path('/addProject');
+    }
+
+    $scope.displayTotalProject = function(event){
+        console.log(event);
+    }    
 
 });

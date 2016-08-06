@@ -1,11 +1,10 @@
 'use strict';
 
 angular.module('frontendApp')
-  .controller('AuthorizeCtrl', function ($http, $routeParams, $rootScope, $scope, $location) {
-    $rootScope.accessToken = $routeParams.accessToken;
-    $http({method: 'GET', url: 'http://localhost:3000/authorize', headers: {'accessToken' : $rootScope.accessToken} }).success(function(response){
-    	$rootScope.user = response;
+  .controller('AuthorizeCtrl', function ($http, $routeParams, $rootScope, $scope, $location, $User) {
+  	$User.me($routeParams.accessToken, function(user){
+  		$rootScope.user = user;
     	$rootScope.isConnected = true;
-    });
-    $location.path('/');
+    	$location.path('/');
+  	});
   });

@@ -16,7 +16,8 @@ angular.module('frontendApp').directive('tileProject', function () { 'use strict
                        '<label>{{"auteur" | translate}} : </label>  <inline-author uid="project.author"></inline-author><br/>' +
                     '</div>' +
                    '</div>',
-        controller: function ($scope) {            
+        controller: function ($scope) { 
+            console.log($scope.project);           
         	$scope.setExpand = function(){
             	$scope.expand  = ($scope.expand === true) ? false : true;
             	return;

@@ -8,6 +8,14 @@ angular.module('frontendApp')
             	callback(response);
             });
 		},
+		me : function(token, callback){
+			$http({method: 'GET', url: $TestData.identity+'authorize', headers: {'accessToken' : token} })
+			.success(function(response){
+				callback(response);
+	    		$rootScope.user = response;
+	    		$rootScope.isConnected = true;
+	    	});
+		},
 		groupBy: function(property, callback){
 			this.get(function(projects){
 				var group = [];

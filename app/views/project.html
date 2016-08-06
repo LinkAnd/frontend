@@ -1,9 +1,15 @@
-<h1>Projects</h1>
+<h1>
+  Projects
+</h1>
 <div>
+
+ <div>
+  <a ng-show="isConnected" ng-click="gotoAdd()" class="btn btn-success pull-right">Add</a>
+ </div>
 
   <div>
        <span ng-repeat="(key, tag) in group">
-       	      <a class="btn btn-primary" ng-click="selectTag(key)" ng-class="(tagSelected.name === tag.name) ? 'active' : ''">{{key}}</a>
+       	      <a class="btn btn-primary" ng-click="selectTag(tag._id.tag)" ng-class="(tagSelected.name === tag._id.tag) ? 'active' : ''" >{{tag._id.tag}}</a>
        </span>
   </div>
 
