@@ -1,0 +1,32 @@
+<h1>
+  Projects
+</h1>
+<div>
+
+ <div>
+  <a ng-show="isConnected" ng-click="gotoAdd()" class="btn btn-success pull-right">Add</a>
+ </div>
+
+  <div>
+       <span ng-repeat="(key, tag) in group">
+       	      <a class="btn btn-primary" ng-click="selectTag(tag._id.tag)" ng-class="(tagSelected.name === tag._id.tag) ? 'active' : ''" >{{tag._id.tag}}</a>
+       </span>
+  </div>
+
+  <br/>
+
+  <div ng-show="tagSelected">
+     <input type="text" ng-model="search"/>
+     <a class="btn btn-primary" ng-click="getReach()">Reach</a>
+     <span ng-show="result.length > 0">{{result.length}} project(s)</span>
+  </div>
+
+  <br/>
+
+  <div ng-show="tagSelected">
+    <div ng-repeat="project in result">
+   	   <tile-project project="project"></tile-project>
+    </div>
+  </div>
+
+</div>

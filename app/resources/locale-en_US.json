@@ -6,5 +6,8 @@
     "views.about.text.general.p1"         : "",
     "views.about.text.general.p2"         : "",
     "views.about.text.general.p3"         : "",
-    "directives.language-select.Language": "Language"
+    "directives.language-select.Language" : "Language",
+    "description"                         : "description",
+    "auteur"                              : "author",
+    "url"                                 : "url"
 }

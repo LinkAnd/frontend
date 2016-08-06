@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch', 
     'pascalprecht.translate',
-    'tmh.dynamicLocale'
+    'tmh.dynamicLocale',
+    'elasticsearch'
   ])
   .constant('DEBUG_MODE', /*DEBUG_MODE*/true/*DEBUG_MODE*/)
   .constant('LOCALES', {
@@ -38,6 +39,26 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/contact', {
+        'templateUrl' : 'views/contact.html',
+        'controller'  : 'ContactCtrl',
+        'controllerAs': 'abouts'
+      })
+      .when('/project', {
+        'templateUrl' : 'views/project.html',
+        'controller'  : 'ProjectCtrl',
+        'controllerAs': 'project'
+      })
+      .when('/authorize/:accessToken', {
+        'templateUrl' : 'views/main.html',
+        'controller'  : 'AuthorizeCtrl',
+        'controllerAs': 'authorize'
+      })
+      .when('/addProject', {
+        'templateUrl' : 'views/addProject.html',
+        'controller'  : 'AddProjectCtrl',
+        'controllerAs': 'addProject'
       })
       .otherwise({
         redirectTo: '/'
@@ -61,4 +82,3 @@ angular
   .config(function (tmhDynamicLocaleProvider) {
     tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
   });
-  ;
