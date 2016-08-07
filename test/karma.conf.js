@@ -39,6 +39,7 @@ module.exports = function(config) {
       'public/components/angular-dynamic-locale/src/tmhDynamicLocale.js',
       'public/components/lodash/lodash.js',
       'public/components/elasticsearch/elasticsearch.js',
+      'public/components/ng-tags-input/ng-tags-input.js',
       'public/components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

@@ -18,7 +18,9 @@ angular
     'ngTouch', 
     'pascalprecht.translate',
     'tmh.dynamicLocale',
-    'elasticsearch'
+    'elasticsearch',
+    'ngTagsInput',
+    'ngSanitize'
   ])
   .constant('DEBUG_MODE', /*DEBUG_MODE*/true/*DEBUG_MODE*/)
   .constant('LOCALES', {
@@ -57,7 +59,7 @@ angular
       })
       .when('/addProject', {
         'templateUrl' : 'views/addProject.html',
-        'controller'  : 'AddProjectCtrl',
+        'controller'  : 'addProjectCtrl',
         'controllerAs': 'addProject'
       })
       .otherwise({
