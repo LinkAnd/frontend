@@ -1,28 +1,38 @@
 <h1> Adding Project </h1>
 
-<form ng-submit="submitForm(projectForm.$valid)" name="projectForm">
-	<div class="form-group">
-	    <label for="name">Name your project</label>
-	    <input type="text"  ng-model="project.name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name your project" required>
+<form ng-submit="submitForm(projectForm.$valid)" class="form-horizontal" name="projectForm">
+	<div class="control-group .ng-invalid">
+	    <label for="name" class="control-label" >Name your project</label>
+	    <div class="controls">
+	    	<input type="text"  ng-model="project.name" ng-class="{'form-control': true}" id="name" aria-describedby="nameHelp" placeholder="Enter name your project" required>
+	    </div>
 	    <small id="nameHelp" class="form-text text-muted">name of project</small>
 	</div>
-	<div class="form-group">
-	  <label for="description">Describe your project</label>
-	  <textarea class="form-control" rows="5" id="description" maxlength="255" minlength="25" ng-model="project.description" aria-describedby="describeHelp" required></textarea>
+	<div class="control-group">
+	  <label for="description" class="control-label">Describe your project</label>
+	  <div class="controls">
+	  		<textarea class="form-control" rows="5" id="description" maxlength="255" minlength="25" ng-model="project.description" aria-describedby="describeHelp" required></textarea>
+	  </div>
 	  <small id="describeHelp" class="form-text text-muted">write an text between 25 and 255 characters</small>
 	</div>
-	<div class="form-group">
-	    <label for="url">your website ou your youtube presentation</label>
-	    <input type="url" class="form-control" id="url" aria-describedby="nameHelp" placeholder="Enter url your website or youtube video" required>
+	<div class="control-group">
+	    <label for="url" class="control-label">your website ou your youtube presentation</label>
+	    <div class="controls">
+	    	<input type="url" class="form-control" id="url" aria-describedby="nameHelp" placeholder="Enter url your website or youtube video" required>
+	    </div>
 	</div>
-	<div class="form-group">
-		<label for="tag">Choose tagsfor categorize your project</label>
-		<tags-input ng-model="project.tags" add-on-paste="true" id="tag" aria-describedby="tagsHelp" required>
-	      <auto-complete source="tags"></auto-complete>
-	    </tags-input>
+	<div class="control-group">
+		<label for="tag"  class="control-label">Choose tags for categorize your project</label>
+		<div class="controls">
+			<tags-input ng-model="project.tags" add-on-paste="true" id="tag" aria-describedby="tagsHelp" required>
+	      		<auto-complete source="tags"></auto-complete>
+	    	</tags-input>
+	    </div>
 	    <small id="tagsHelp" class="form-text text-muted">Be carefull you can choose 2 tags</small>
 	</div>
-	<div class="form-group">
-		<input type="submit" class="btn btn-primary"/>
+	<div class="control-group">
+		<div class="controls">
+			<input type="submit" class="btn btn-primary"/>
+		</div>
 	</div>
 </form>

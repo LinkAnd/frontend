@@ -24,6 +24,12 @@ angular.module('frontendApp')
 			$http
 			.post($TestData.project+'tags', {"tag":tag})
 			.success(callback);
+		},
+		add : function(project, success, error){
+		     $http
+			.post($TestData.project+"project", project)
+			.success(success)
+			.error(error);
 		}
 	};
 });

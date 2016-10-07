@@ -20,7 +20,8 @@ angular
     'tmh.dynamicLocale',
     'elasticsearch',
     'ngTagsInput',
-    'ngSanitize'
+    'ngSanitize',
+    'ngMessages'
   ])
   .constant('DEBUG_MODE', /*DEBUG_MODE*/true/*DEBUG_MODE*/)
   .constant('LOCALES', {
